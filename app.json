@@ -1,0 +1,6 @@
+{
+  "name": "404-api",
+  "description": "A simple whatsapp direct messaging api",
+  "repository": "https://github.com/RDTUTORIAL/404-api",
+  "keywords": ["node", "express", "static", "whatsapp", "api"]
+}
