@@ -20,7 +20,7 @@ const port = process.env.PORT || 5000;
  * http://<domain>
  * Desciption: Main page
  */
-app.get('/', (req, res) => {
+app.get('/quote', (req, res) => {
         const quotes = [
                 "Kegagalan adalah awal dari kehancuran, jangan menyerah sampai hancur",
                 "Makan hanya untuk orang lemah",
@@ -48,8 +48,8 @@ app.get('/', (req, res) => {
 /*
  * http://<domain>/:phonenum
  * Desciption: Redirect url to respective whatsapp api interface without message text
- */
-app.get('/:phonenum', (req, res) => {
+ 
+app.get('api/:phonenum', (req, res) => {
     var source = req.header('user-agent');
     var ua = useragent.parse(source);
 
@@ -65,7 +65,7 @@ app.get('/:phonenum', (req, res) => {
 /*
  * http://<domain>/:phonenum/:message
  * Desciption: Redirect url to respective whatsapp api interface with message text
- */
+ 
 app.get('/:phonenum/:message', (req, res) => {
     var source = req.header('user-agent');
     var ua = useragent.parse(source);
@@ -82,7 +82,7 @@ app.get('/:phonenum/:message', (req, res) => {
 /*
  * http://<domain>/whatsapp
  * Desciption: Redirect url to respective whatsapp api interface using predefined phone number
- */
+ 
 app.get('/whatsapp', (req, res) => {
     var source = req.header('user-agent');
     var ua = useragent.parse(source);
@@ -95,7 +95,7 @@ app.get('/whatsapp', (req, res) => {
     } else {
         res.status(400).json({status: "error"});
     }
-})
+}) */
 
 // Start server at <port>
 app.listen(port, (err) => {
